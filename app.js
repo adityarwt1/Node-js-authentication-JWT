@@ -10,6 +10,7 @@ const connectDB  =require('./lib/mongodb')
 const indexRoute = require('./routes/index')
 const signupRoute = require('./routes/signup')
 const authRoute = require('./routes/auth')
+const loginRoute = require('./routes/login')
 
 // Extract from .env file
 const PORT = process.env.PORT || 3000 // Default to 3000 if PORT is not set
@@ -29,6 +30,7 @@ connectDB(process.env.MONGODB_URI).then(console.log("connected to mongodb"))
 app.use("/" , indexRoute)
 app.use("/", authRoute)
 app.use("/signup" , signupRoute)
+app.use("/login" ,  loginRoute)
 
 
 
