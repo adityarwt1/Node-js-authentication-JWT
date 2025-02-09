@@ -1,0 +1,38 @@
+{
+  "name": "jwt-auhentication",
+  "version": "1.0.0",
+  "description": "Authentication using node js",
+  "main": "app.js",
+  "scripts": {
+    "start": "npx nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adityarwt1/Node-js-authentication-JWT.git"
+  },
+  "keywords": [
+    "authentication",
+    "using",
+    "node",
+    "js",
+    "authentication",
+    "in",
+    "node",
+    "js"
+  ],
+  "author": "Aditya Rawat",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adityarwt1/Node-js-authentication-JWT/issues"
+  },
+  "homepage": "https://github.com/adityarwt1/Node-js-authentication-JWT#readme",
+  "dependencies": {
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^16.4.7",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.10.0",
+    "nodemon": "^3.1.9"
+  }
+}
