@@ -1,26 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>My Blog</title>
+    <title>My Blog</title>
 </head>
 <body style="margin: 0; padding: 0;">
 
 <nav style="background-color: #333; color: #fff; padding: 10px;">
-  <ul style="list-style: none; margin: 0; padding: 0;">
-    <li style="display: inline; margin-right: 20px;"><a href="#" style="color: #fff; text-decoration: none;">Home</a></li>
-    <li style="display: inline; margin-right: 20px;"><a href="#" style="color: #fff; text-decoration: none;">About</a></li>
-    <li style="display: inline; margin-right: 20px;"><a href="#" style="color: #fff; text-decoration: none;">Blog</a></li>
-    <li style="display: inline; margin-right: 20px;"><a href="#" style="color: #fff; text-decoration: none;">Contact</a></li>
-    <li style="float: right;"><a href="#" style="color: #fff; text-decoration: none;  margin-left: 10px;">Login</a></li>
-    <li style="float: right;"><a href="/signup" style="color: #fff; text-decoration: none; margin-left: 10px;">Signup</a></li>
-  </ul>
+    <ul style="list-style: none; margin: 0; padding: 0;">
+        <li style="display: inline; margin-right: 20px;"><a href="#" style="color: #fff; text-decoration: none;">Home</a></li>
+        <li style="display: inline; margin-right: 20px;"><a href="#" style="color: #fff; text-decoration: none;">About</a></li>
+        <li style="display: inline; margin-right: 20px;"><a href="#" style="color: #fff; text-decoration: none;">Blog</a></li>
+        <li style="display: inline; margin-right: 20px;"><a href="#" style="color: #fff; text-decoration: none;">Contact</a></li>
+
+        <% if (user) { %>
+            <!-- If user is logged in, show Logout button -->
+            <li style="float: right;">
+                <a href="/logout" style="color: #fff; text-decoration: none; margin-left: 10px;">Logout</a>
+            </li>
+        <% } else { %>
+            <!-- If no user is logged in, show Login and Signup buttons -->
+            <li style="float: right;">
+                <a href="/login" style="color: #fff; text-decoration: none; margin-left: 10px;">Login</a>
+            </li>
+            <li style="float: right;">
+                <a href="/signup" style="color: #fff; text-decoration: none; margin-left: 10px;">Signup</a>
+            </li>
+        <% } %>
+    </ul>
 </nav>
 
-<h1 style="text-align: center; margin-top: 50px;">Welcome to My Blog</h1>
-
-<p style="margin: 20px;">This is a simple landing page for my blog. I will be writing about a variety of topics, including technology, travel, and food.</p>
-
-<p style="margin: 20px;">I hope you enjoy reading my blog!</p>
+<% if (!user) { %>
+    <!-- If the user is NOT signed in, show the message -->
+    <h1 style="text-align: center; margin-top: 50px; color: red;">Please sign up to view the content.</h1>
+<% } else { %>
+    <!-- If the user is signed in, show the content -->
+    <h1 style="text-align: center; margin-top: 50px;">Welcome to My Blog</h1>
+    <p style="margin: 20px;">This is a simple landing page for my blog. I will be writing about a variety of topics, including technology, travel, and food.</p>
+    <p style="margin: 20px;">I hope you enjoy reading my blog!</p>
+<% } %>
 
 </body>
 </html>
